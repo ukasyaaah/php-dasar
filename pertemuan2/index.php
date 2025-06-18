@@ -19,12 +19,16 @@ echo 123;
 echo true;
 echo false; // output kosong
 
+var_dump(false); // output bool(false)
+
 print 'Ukhasyah Fauzan<br>'; 
 
 /// print_r harus pake kurung
-print_r ('Ukhasyah Fauzan<br>');
+print_r ('Ukhasyah Fauzan pake print_r<br>');
 
 var_dump ('Hani<br>'); // output string(4)'Hani'
+
+var_export(8); // ini mirip var_dump tapi lebih readable.
 
 /// Penulisan Sintaks PHP
 // 1. PHP di dalam HTML
@@ -35,7 +39,12 @@ var_dump ('Hani<br>'); // output string(4)'Hani'
 $nama = 'Ukhasyah';
 // 2. Gaperlu mendefinisikan tipe data
 // 3. nama var gaboleh diawali dengan angka, tp boleh mengandung angka
-// 4. nama var gaboleh ada spasinya, klo ada pake _
+// 4. nama var gaboleh ada spasinya, klo ada pake underscore (_)
+
+$angka = 10;         // integer
+$teks = "hello";     // string
+$benar = true;       // boolean
+$array = [1, 2, 3];  // array
 
 /// Interpolasi
 // "" petik 2 lebih sakti, krn dgn petik 2 kita bisa pake interpolasi
@@ -92,11 +101,11 @@ var_dump($c > 20 || $c % 2 == 1);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $nama?>'s PHP Document</title>
+    <title><?php echo $nama . "'s PHP Document";?></title>
 </head>
 <body>
     <h1>Hallo <?php echo $nama; ?></h1>
-    <p><?php echo 'ini adalah paragraf, dalam php gapapa kalo punya tag php lebih dari 1 dlm 1 file';?></p>
-    <?php echo '<h4> Hello ini H4</h4>'?>
+    <p><?= 'ini adalah paragraf, dalam php gapapa kalo punya tag php lebih dari 1 dlm 1 file';?></p>
+    <?= '<h4> Hello ini H4</h4>';?>
 </body>
 </html>
