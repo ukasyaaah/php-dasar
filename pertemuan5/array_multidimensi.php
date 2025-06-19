@@ -1,5 +1,5 @@
 <?php
-// Array multi dimensi
+// Array multi dimensi : array yang isinya array lagi
 
 // Array numeric : array yg indexnya angka
 $mahasiswas = [['Zufar', '24033', 'TRPL'], ['Hani', '65065', 'TRMG']];

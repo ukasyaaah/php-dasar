@@ -44,7 +44,8 @@ echo '<br>';
             border-radius: 24%;
             border-color: black;
         }
-        .clear{
+
+        .clear {
             clear: both;
         }
     </style>
