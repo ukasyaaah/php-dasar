@@ -12,7 +12,7 @@ untuk 2 baris
 
 /// Biasanya dipake untuk debugging
 // print_r // untuk mencetak array
-// var_dump // untuk liat isi variabel / info var tsb
+// var_dump // untuk mencetak isi dari var, array, objek
 
 echo 'Ukhasyah Fauzan<br>'; // Untuk String '' atau ""
 echo 123;
