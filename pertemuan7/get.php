@@ -22,8 +22,8 @@ echo '<br>';
 
 // Superglobals : variabel2 global milik php yg bisa diakses dimanapun & kapanpun
 // Dari 7 ini, semuanya adalah array assosiative
-// $_GET -> datanya dikirim lewat url
-// $_POST -> datanya dikirim lewat form (bisa juga dgn get)
+// $_GET -> datanya dikirim lewat url (ada di url)
+// $_POST -> datanya dikirim lewat form (gada di url)(bisa juga dgn get)
 // $_REQUEST
 // $_SESSION
 // $_COOKIE
@@ -77,6 +77,13 @@ php
             <li><a href="to_get.php?nama=<?php echo $hape['nama'] ?>&merk=<?php echo $hape['merk'] ?>&warna=<?php echo $hape['warna'] ?>&processor=<?php echo $hape['processor'] ?>&harga=<?php echo $hape['harga'] ?> "><?= $hape['nama'] ?></li></a>
         <?php endforeach; ?>
     </ul>
+
+    <form action="to_get_form.php" method="get">Nama :
+        <input type="text" name="namaget">
+        <br>
+        <button type="submit" name="submit_get">Kirim Get</button>
+    </form>
+
 </body>
 
 </html>

@@ -26,7 +26,7 @@ if (
 </head>
 
 <body>
-    <h1>Detail HP</h1>
+    <h1>Halo <?= $_GET['namaget'] ?>Detail HP</h1>
     <ul>
         <!-- dan data ditangkap oleh variabel super global $_GET  -->
         <li>Nama : <?php echo $_GET['nama'] ?></li>
