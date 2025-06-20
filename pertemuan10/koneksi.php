@@ -1,4 +1,5 @@
 <?php
+// 1. Koneksi ke database
 $koneksi = mysqli_connect('localhost', 'root', '', 'phpdasar');
 
 function query($query)
@@ -42,3 +43,4 @@ function hapus($id)
     // cek berhasil dihapus
     return mysqli_affected_rows($koneksi);
 }
+
