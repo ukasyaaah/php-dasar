@@ -28,7 +28,7 @@ $mahasiswa = query('SELECT * FROM mahasiswa');
         <?php foreach ($mahasiswa as $mhs): ?>
             <tr>
                 <td><?= $i ?></td>
-                <td><a href="edit.php?id=<?php $mhs->id ?>">Ubah</a> | <a href="hapus.php?id=<?= $mhs->id ?>" onclick="return confirm('Yakin mau dihapus?')">Hapus</a></td>
+                <td><a href="edit.php?id=<?= $mhs->id ?>">Ubah</a> | <a href="hapus.php?id=<?= $mhs->id ?>" onclick="return confirm('Yakin mau dihapus?')">Hapus</a></td>
                 <td><?= $mhs->nama ?></td>
                 <td><?= $mhs->nim ?></td>
                 <td><?= $mhs->jurusan ?></td>
