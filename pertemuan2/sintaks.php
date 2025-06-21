@@ -1,4 +1,4 @@
-<?php  
+<?php
 /// Sintaks PHP
 
 // ini komentar 1 baris
@@ -21,12 +21,12 @@ echo false; // output kosong
 
 var_dump(false); // output bool(false)
 
-print 'Ukhasyah Fauzan<br>'; 
+print 'Ukhasyah Fauzan<br>';
 
 /// print_r harus pake kurung
-print_r ('Ukhasyah Fauzan pake print_r<br>');
+print_r('Ukhasyah Fauzan pake print_r<br>');
 
-var_dump ('Hani<br>'); // output string(4)'Hani'
+var_dump('Hani<br>'); // output string(4)'Hani'
 
 var_export(8); // ini mirip var_dump tapi lebih readable.
 
@@ -55,10 +55,10 @@ echo "nama saya $nama<br>"; // nama saya (isi variabelnya)
 // Aritmatika -> + - * /
 $x = 20;
 $y = 30;
-echo $x + $y,'<br>';
-echo 1 + 1,'<br>';
-echo 2 - 2,'<br>';
-echo 3*3,'<br>';
+echo $x + $y, '<br>';
+echo 1 + 1, '<br>';
+echo 2 - 2, '<br>';
+echo 3 * 3, '<br>';
 
 /// Penggabung String / concat
 // pake titik (.) , klo js pake plus (+) 
@@ -71,17 +71,17 @@ echo $nama_depan . " " . $nama_blkg;
 // = , +=, -=, *= /=, %=, .=
 $a = 5;
 $a += 1;
-echo $a,'<br>'; // += adlh 5 + 1
+echo $a, '<br>'; // += adlh 5 + 1
 
 $namaa = 'Zufar';
 $namaa .= '';
 $namaa .= 'Hani';
-echo $namaa,'<br>'; // .= adlh var . var
+echo $namaa, '<br>'; // .= adlh var . var
 
 /// Operator Perbandingan
 // <, >, <=, >=, ==, != -> cuma ngecek nilai nya, bukan tipe datanya
 // biasanya dipake pas pengkondisian
-var_dump(1>2); //-> false
+var_dump(1 > 2); //-> false
 var_dump(1 == '1'); //-> true
 
 /// Operator Identitas -> ngecek nilai & tipe datanya juga
@@ -97,15 +97,18 @@ var_dump($c > 20 || $c % 2 == 1);
 ?>
 
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $nama . "'s PHP Document";?></title>
+    <title><?php echo $nama . "'s PHP Document"; ?></title>
 </head>
+
 <body>
     <h1>Hallo <?php echo $nama; ?></h1>
-    <p><?= 'ini adalah paragraf, dalam php gapapa kalo punya tag php lebih dari 1 dlm 1 file';?></p>
-    <?= '<h4> Hello ini H4</h4>';?>
+    <p><?= 'ini adalah paragraf, dalam php gapapa kalo punya tag php lebih dari 1 dlm 1 file'; ?></p>
+    <?= '<h4> Hello ini H4</h4>'; ?>
 </body>
+
 </html>
