@@ -1,25 +1,34 @@
 <?php
+
+// CATATAN
+// - INGAT, JGN LUPA <?PHP ATAU <?=
 require 'koneksi.php';
 
+// get dulu datanya di variabel
 $id = $_GET['id'];
 
-$mahasiswa = query("SELECT * FROM mahasiswa WHERE id='$id'");
+if (!isset($_GET['id'])) {
+    header('Location: index.php');
+    exit;
+}
 
-if (isset($_POST['submit'])) {
+// lakukan query untuk id yg udh di get
+$mahasiswa = query("SELECT * FROM mahasiswa WHERE id=$id");
+
+if (isset($_POST["submit"])) {
     if (edit($_POST) > 0) {
-        echo 'Berhasil';
+        echo 'Berhasil diedit';
         header('Location: index.php');
         exit;
     } else {
-        echo 'Gagal';
+        echo 'gagal mengedit<br>';
+        echo '<br>';
         echo mysqli_affected_rows($koneksi);
-        echo mysqli_error($koneksi);
     }
 }
 
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,19 +36,19 @@ if (isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Data Mahasiswa</title>
+    <title>Edit Data</title>
 </head>
 
 <body>
     <h1>Edit Data Mahasiswa</h1>
     <form action="" method="post">
         <ul>
-            <?php foreach ($mahasiswa as $mhs) : ?>
+            <?php foreach ($mahasiswa as $mhs): ?>
                 <li hidden>
                     <label for="id">id : </label>
                     <input type="text" name="id" required value="<?= $mhs->id ?>">
                 </li>
-                                <li>
+                <li>
                     <label for="nama">Nama : </label>
                     <input type="text" name="nama" required value="<?= $mhs->nama ?>">
                 </li>
@@ -48,17 +57,14 @@ if (isset($_POST['submit'])) {
                     <input type="text" name="nim" required value="<?= $mhs->nim ?>">
                 </li>
                 <li>
-                    <label for=" jurusan">Jurusan : </label>
-                    <input type="text" name="jurusan" required value=" <?= $mhs->jurusan ?>">
+                    <label for="jurusan">Jurusan : </label>
+                    <input type="text" name="jurusan" required value="<?= $mhs->jurusan ?>">
                 </li>
-                <li>
-                    <button type="submit" name="submit">Kirim</button>
-                </li>
+                <button type="submit" name="submit">Edit Data</button>
             <?php endforeach ?>
         </ul>
     </form>
-    <h1></h1>
-    <a href="index.php">Balik</a>
+
 </body>
 
 </html>
