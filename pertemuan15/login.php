@@ -1,13 +1,26 @@
 <?php
 require 'koneksi.php';
 
-if(isset($_POST['register'])){
-    if(reg($_POST)>0){
-        echo 'berhasil register';
-        header('Location: login.php');
-        exit;
+if (isset($_POST['login'])) {
+
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $result = mysqli_query($koneksi, "SELECT * FROM user WHERE username='$username'");
+
+    // cek username
+    if (mysqli_num_rows($result) === 1) {
+
+        // Cek Password
+        $baris = mysqli_fetch_object($result);
+        if (password_verify($password, $baris->password)) {
+            header('Location: index.php');
+            exit;
+        }else{
+            echo 'Yahaaaaaa password salah';
+        }
     }else{
-        echo mysqli_error($koneksi);
+        echo 'username mu gadaaaa di database kuuu';
     }
 }
 
@@ -21,7 +34,7 @@ if(isset($_POST['register'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrasi</title>
+    <title>Login</title>
     <style>
         label {
             display: block;
@@ -30,7 +43,7 @@ if(isset($_POST['register'])){
 </head>
 
 <body>
-    <h1>Registrasi</h1>
+    <h1>Login</h1>
     <form action="" method="post">
         <ul>
             <li>
@@ -41,12 +54,9 @@ if(isset($_POST['register'])){
                 <label for="password">Password : </label>
                 <input type="password" name="password" id="password">
             </li>
+
             <li>
-                <label for="password2">Password Confirmation : </label>
-                <input type="password" name="password2" id="password2">
-            </li>
-            <li>
-                <button type="submit" name="register">Register</button>
+                <button type="submit" name="login">Login</button>
             </li>
         </ul>
 
