@@ -27,3 +27,10 @@ var_dump(1.2e-3);
 
 echo 'Underscore di floating point : ';
 var_dump(1_200_000);
+
+echo 'Integer Overflow ';
+$max = PHP_INT_MAX;
+$over = PHP_INT_MAX + 1;
+var_dump($max);
+var_dump($over);
+
