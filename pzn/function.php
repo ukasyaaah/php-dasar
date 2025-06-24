@@ -187,6 +187,11 @@ sayCall(
 );
 
 // Menerima Anonymous Function
-sayCall('Fauzan', function ($anoname) : string {
+sayCall('Fauzan', function ($anoname): string {
     return strtoupper($anoname);
 });
+echo "\n";
+
+
+
+
